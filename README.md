@@ -1,4 +1,4 @@
-```html
+   ```html
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
@@ -199,6 +199,174 @@
                     <h3 class="text-xl font-bold mb-3">Qualité Premium</h3>
                     <p class="text-gray-400 text-sm">Des recettes savoureuses élaborées avec passion pour une satisfaction totale.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-[#0a0a0c]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Notre <span class="text-primary">Menu</span></h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4">Sélectionnez vos plats et commandez directement sur WhatsApp</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+                
+                <!-- Helper to generate categories -->
+                <script>
+                    const menuData = [
+                        {
+                            title: "Plats Marocains",
+                            image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Salade Marocaine", price: 12 },
+                                { name: "Viande Légumes", price: 30 },
+                                { name: "Poulet Rôti", price: 35 },
+                                { name: "لوبية", price: 15 },
+                                { name: "كرعين", price: 40 },
+                                { name: "دوارة", price: 35 }
+                            ]
+                        },
+                        {
+                            title: "Sandwich",
+                            image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Sandwich Dinde", price: 20 },
+                                { name: "Sandwich Viande Hachée", price: 22 },
+                                { name: "Sandwich Mixte", price: 25 },
+                                { name: "Sandwich Thon", price: 18 }
+                            ]
+                        },
+                        {
+                            title: "Panini",
+                            image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Panini Poulet", price: 22 },
+                                { name: "Panini Viande Hachée", price: 22 },
+                                { name: "Panini Mixte", price: 25 },
+                                { name: "Panini Thon", price: 18 }
+                            ]
+                        },
+                        {
+                            title: "Poutine",
+                            image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Poutine Dinde", price: 35 },
+                                { name: "Poutine Viande Hachée", price: 38 },
+                                { name: "Poutine Mixte", price: 40 }
+                            ]
+                        },
+                        {
+                            title: "Nugettes",
+                            image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "4 Pièces", price: 15 },
+                                { name: "7 Pièces", price: 20 },
+                                { name: "10 Pièces", price: 25 },
+                                { name: "1 Muslitos Meal", price: 5 }
+                            ]
+                        },
+                        {
+                            title: "Tacos",
+                            image: "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Tacos Dinde", price: 30 },
+                                { name: "Tacos Viande Hachée", price: 32 },
+                                { name: "Tacos Mixte", price: 32 },
+                                { name: "Tacos Nuggets", price: 32 },
+                                { name: "Tacos Cordon Bleu", price: 35 }
+                            ]
+                        },
+                        {
+                            title: "Tacos XL",
+                            image: "https://images.unsplash.com/photo-1613655462372-911e86a048dc?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Tacos Dinde XL", price: 40 },
+                                { name: "Tacos Viande Hachée XL", price: 42 },
+                                { name: "Tacos Mixte XL", price: 44 },
+                                { name: "Tacos Nuggets XL", price: 44 }
+                            ]
+                        },
+                        {
+                            title: "Burger",
+                            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Hamburger", price: 22 },
+                                { name: "Cheeseburger", price: 25 },
+                                { name: "Big Burger", price: 32 },
+                                { name: "Chicken Burger", price: 30 },
+                                { name: "Double Chicken Burger", price: 40 },
+                                { name: "Chicken Beef Burger", price: 40 },
+                                { name: "Dynamite Burger", price: 45 }
+                            ]
+                        },
+                        {
+                            title: "Shawarma",
+                            image: "https://images.unsplash.com/photo-1645367617277-241519d15024?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Shawarma", price: 25 },
+                                { name: "Shawarma Extra", price: 30 }
+                            ]
+                        },
+                        {
+                            title: "Boissons",
+                            image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80",
+                            items: [
+                                { name: "Soda", price: 5 },
+                                { name: "Eau 50cl", price: 5 }
+                            ]
+                        }
+                    ];
+
+                    const pizzas = {
+                        title: "Les Pizzas",
+                        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80",
+                        items: [
+                            { name: "Margarita", s: 18, m: 25 },
+                            { name: "Thon", s: 22, m: 30 },
+                            { name: "Poulet", s: 25, m: 30 },
+                            { name: "Viande Hachée", s: 25, m: 30 },
+                            { name: "Fruits de Mer", s: 30, m: 38 },
+                            { name: "Végétarienne", s: 20, m: 28 },
+                            { name: "Quatre Saisons", s: 30, m: 38 }
+                        ]
+                    };
+
+                    function createQtyControl() {
+                        return `
+                            <div class="flex items-center bg-dark-lighter rounded-lg border border-gray-700 h-8">
+                                <button type="button" class="w-8 h-full text-gray-400 hover:text-white hover:bg-gray-700 rounded-l-lg transition-colors qty-btn dec">-</button>
+                                <input type="number" value="0" min="0" class="w-8 text-center bg-transparent text-white font-medium outline-none p-0 border-none text-sm pointer-events-none" readonly>
+                                <button type="button" class="w-8 h-full text-gray-400 hover:text-white hover:bg-gray-700 rounded-r-lg transition-colors qty-btn inc">+</button>
+                            </div>
+                        `;
+                    }
+
+                    const menuGrid = document.getElementById('menu-grid');
+
+                    // Render Standard Categories
+                    menuData.forEach((cat, index) => {
+                        let itemsHtml = cat.items.map(item => `
+                            <div class="menu-item flex justify-between items-center py-3 border-b border-gray-800 last:border-0">
+                                <h4 class="text-gray-200 font-medium item-name pr-2">${item.name}</h4>
+                                <div class="flex items-center gap-3 shrink-0">
+                                    <span class="text-primary font-bold item-price" data-price="${item.price}">${item.price} DH</span>
+                                    ${createQtyControl()}
+                                </div>
+                            </div>
+                        `).join('');
+
+                        menuGrid.innerHTML += `
+                            <div class="menu-category bg-dark-card rounded-2xl shadow-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all reveal" style="transition-delay: ${index * 50}ms">
+                                <div class="h-48 relative overflow-hidden group">
+                                    <img src="${cat.image}" alt="${cat.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark-card to-transparent"></div>
+                                </div>
+                                <div class="bg-primary text-white text-center py-3 font-bold text-xl uppercase tracking-wider shadow-md relative z-10">
+                                    ${cat.title}
+          </div>
             </div>
         </div>
     </section>
